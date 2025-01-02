@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #2f4f4f; /* Negro claro tirando a aguamarina */
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

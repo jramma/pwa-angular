@@ -10,9 +10,12 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { HttpClientModule } from '@angular/common/http';
-// DEPRECATED!!!!!!!!!!!!!!!!!!!!! -- avoid httpclientmodule
+// DEPRECATED -- avoid httpclientmodule
 export const appConfig: ApplicationConfig = {
   providers: [
     // importProvidersFrom(HttpClientModule),
@@ -21,5 +24,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
+    provideAnimationsAsync(),
+    importProvidersFrom(MatTableModule, BrowserAnimationsModule)
   ],
 };

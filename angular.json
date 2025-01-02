@@ -27,7 +27,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/magenta-violet.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -91,7 +93,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/magenta-violet.css",
+              "src/assets/css/styles.css",
+              "src/assets/css/animate.css"
             ],
             "scripts": []
           }
