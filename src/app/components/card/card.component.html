@@ -1,0 +1,14 @@
+<mat-card class="animate__animated animate__bounce animate__fadeIn transition ease-in-out duration-300">
+  <mat-card-header>
+    <mat-card-title>{{ image.id }} - {{ image.author }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <button
+      mat-button
+      class="transition ease-in-out duration-300 hover:bg-pink-500 hover:text-white"
+      [routerLink]="['/image', image.id]"
+    >
+      View
+    </button>
+  </mat-card-actions>
+</mat-card>

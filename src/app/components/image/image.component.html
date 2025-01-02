@@ -1,26 +1,38 @@
-<div class="container mt-5">
-  <div
-    *ngIf="image"
-    class="row animate__animated animate__bounce animate__fadeIn"
-  >
+<div class="container text-white py-10">
+  <div *ngIf="image" class="row animate__animated animate__bounce animate__fadeIn">
     <div class="col-md-9">
-      <p><strong>Id:</strong> {{ image.id }}</p>
-      <p><strong>Author:</strong> {{ image.author }}</p>
-      <p><strong>Width:</strong> {{ image.width }}</p>
-      <p><strong>Height:</strong> {{ image.height }}</p>
-      <p>
-        <strong>Url:</strong>
-        <a href="{{ image.url }}" target="_blank">{{ image.url }}</a>
-      </p>
+      <h1>{{ image?.author }}</h1>
       <img
         class="rounded"
         style="width: 80%; height: 80%"
-        src="{{ image.download_url }}"
-        alt="{{ image.author }}"
+        [src]="image?.download_url"
+        [alt]="image?.author"
       />
     </div>
     <div class="col-md-3">
       <a class="btn btn-primary" [routerLink]="['/']">Back</a>
+      <button mat-button (click)="toggleDetails()">
+        Show all details
+      </button>
     </div>
+  </div>
+  <div *ngIf="showDetails">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Details
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Id:</strong> {{ image?.id }}</p>
+        <p><strong>Author:</strong> {{ image?.author }}</p>
+        <p><strong>Width:</strong> {{ image?.width }}</p>
+        <p><strong>Height:</strong> {{ image?.height }}</p>
+        <p>
+          <strong>Url:</strong>
+          <a [href]="image?.url" target="_blank">{{ image?.url }}</a>
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 </div>

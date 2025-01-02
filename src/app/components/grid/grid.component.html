@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="images" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let image">{{ image.id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef>Author</th>
+    <td mat-cell *matCellDef="let image">{{ image.author }}</td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let image">
+      <button
+        mat-button
+        class="transition ease-in-out duration-300 hover:bg-pink-500 hover:text-white"
+        [routerLink]="['/image', image.id]"
+      >
+        View
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
