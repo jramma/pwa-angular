@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ImagesService } from '../../services/images.service';
+import { Image } from '../../models/image.interface';
 @Component({
   selector: 'app-images',
   imports: [CommonModule, RouterModule], // Importa módulos necesarios.
@@ -9,10 +10,14 @@ import { ImagesService } from '../../services/images.service';
   styleUrl: './images.component.css',
 })
 export class ImagesComponent implements OnInit {
+
+  images: Image[] = [];
+
+
   constructor(private imagesService: ImagesService) {}
   ngOnInit(): void {
     this.imagesService
       .getAllImages()
-      .subscribe((images) => console.log(images));
+      .subscribe((images) => this.images = images);
   }
 }

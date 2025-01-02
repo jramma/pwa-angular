@@ -9,11 +9,15 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+
+// import { HttpClientModule } from '@angular/common/http';
 // DEPRECATED!!!!!!!!!!!!!!!!!!!!! -- avoid httpclientmodule
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom(HttpClientModule),
+    // importProvidersFrom(HttpClientModule),
+    // deprecated
+    provideHttpClient(withFetch()),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
