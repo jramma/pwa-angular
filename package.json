@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-pwa-introduction": "node dist/angular-pwa-introduction/server/server.mjs"
+    "serve:ssr": "node dist/angular-pwa-introduction/server/main.js"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/platform-server": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "@angular/service-worker": "^19.0.0",
     "@angular/ssr": "^19.0.6",
     "animate.css": "^4.1.1",
     "express": "^4.18.2",
