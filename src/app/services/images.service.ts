@@ -12,4 +12,7 @@ export class ImagesService {
   getAllImages(): Observable<Image[]> {
     return this.http.get<Image[]>('https://picsum.photos/v2/list');
   }
+  getImageById(id: string): Observable<Image> {
+    return this.http.get<Image>(`https://picsum.photos/id/${id}/info`);
+  }
 }
