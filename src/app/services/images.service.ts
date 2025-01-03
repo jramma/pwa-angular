@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Image } from '../models/image.interface';
 
 @Injectable({
@@ -10,9 +10,27 @@ export class ImagesService {
   constructor(private http: HttpClient) {}
 
   getAllImages(): Observable<Image[]> {
-    return this.http.get<Image[]>('https://picsum.photos/v2/list');
+    return of(
+      Array.from({ length: 10 }, (_, i) => ({
+        id: `${i}`,
+        author: `Cat ${i}`,
+        width: 400,
+        height: 400,
+        url: `https://cataas.com/cat?${i}`,
+        download_url: `https://cataas.com/cat?${i}`,
+      }))
+    );
   }
+
   getImageById(id: string): Observable<Image> {
-    return this.http.get<Image>(`https://picsum.photos/id/${id}/info`);
+    return of({
+      id,
+      author: `Cat ${id}`,
+      width: 400,
+      height: 400,
+      url: `https://cataas.com/cat?${id}`,
+      download_url: `https://cataas.com/cat?${id}`,
+    });
   }
+
 }
