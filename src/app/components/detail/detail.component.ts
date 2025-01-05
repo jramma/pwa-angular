@@ -8,13 +8,13 @@ import { Image } from '../../models/image.interface';
 import { ImagesService } from '../../services/images.service';
 
 @Component({
-  selector: 'app-image',
+  selector: 'app-detail',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatExpansionModule, RouterModule], // Asegúrate de importar RouterModule
-  templateUrl: './image.component.html',
-  styleUrls: ['./image.component.css']
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css']
 })
-export class ImageComponent implements OnInit {
+export class DetailComponent implements OnInit {
   image: Image | undefined;
   showDetails = false;
 

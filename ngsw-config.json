@@ -32,9 +32,9 @@
   ],
   "dataGroups": [
     {
-      "name": "images-api",
+      "name": "list-api",
       "urls": [
-        "https://picsum.photos/**"
+        "https://cataas.com/**"
       ],
       "cacheConfig": {
         "maxSize": 10,

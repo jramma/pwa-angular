@@ -10,11 +10,11 @@ import { GridComponent } from '../grid/grid.component';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'app-images',
+  selector: 'app-list',
   standalone: true,
   imports: [CommonModule, RouterModule, MatButtonModule, MatProgressSpinnerModule, CardComponent, GridComponent],
-  templateUrl: './images.component.html',
-  styleUrls: ['./images.component.css'],
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css'],
   animations: [
     trigger('listAnimation', [
       transition('* => *', [
@@ -24,7 +24,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ]
 })
-export class ImagesComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   images: Image[] = [];
   viewMode = 'cards';
